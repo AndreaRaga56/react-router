@@ -39,3 +39,19 @@
     font-size: 14px;
     width: 85%;
 }
+
+nav ul{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    list-style: none;
+    margin-top: 60px;
+}
+
+nav .active{
+    background-color: black;
+    border-radius: 15px;
+    padding: 0.4rem 0.6rem;
+    color: white;
+}
+
