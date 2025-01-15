@@ -17,8 +17,7 @@ function MainNav(){
         {
             path: "/Form",
             title: "Form"
-        }
-
+        },
 
     ]
 
