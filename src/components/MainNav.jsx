@@ -25,7 +25,7 @@ function MainNav(){
     const print = menuDiNav.map((curElem) => {
         return (
             <li key={curElem.title}>
-                <NavLink to={curElem.path}>{curElem.title}</NavLink>
+                <NavLink  className="navlink" to={curElem.path}>{curElem.title}</NavLink>
             </li>
         )
     })

@@ -5,14 +5,6 @@ function AppCard({ cardPost, del }) {
     let apiUrl = "http://localhost:3333"
     const navigate = useNavigate()
 
-
-    let newArray = []
-    if (cardPost.tags != false) {
-        newArray = cardPost.tags.map((curTag, i) => {
-            return <span key={i} >#{curTag} </span>
-        })
-    }
-
     return (
         <div className="post-card col">
             {cardPost.image.startsWith("https") ?
@@ -21,7 +13,10 @@ function AppCard({ cardPost, del }) {
             <div className="card-inside">
                 <h4>{cardPost.title}</h4>
                 <p>{cardPost.content}</p>
-                <p className="tag">{cardPost.tags && newArray}</p>
+                <p className="tag">
+                {cardPost.tags.map((curTag, i) => {
+                    return <span key={i} >#{curTag} </span>})} 
+                </p>
             </div>
             <div className="card-btns">
                 <button onClick={() => navigate(`/Posts/${cardPost.id}`)} className="btn btn-success">Dettagli post</button>

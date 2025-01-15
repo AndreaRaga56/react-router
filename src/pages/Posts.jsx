@@ -62,8 +62,8 @@ function Posts() {
       </div>)
     } else if (curPost.tags.includes(tagFiltro)) {
       return (<div key={curPost.id} id={curPost.id} className="d-flex align-items-start mt-5 gap-1">
-          <AppCard cardPost={curPost} del={() => removePost(curPost.id)} />
-        </div>)
+        <AppCard cardPost={curPost} del={() => removePost(curPost.id)} />
+      </div>)
     } else {
       return (false)
     }

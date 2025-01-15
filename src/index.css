@@ -27,8 +27,6 @@
     padding: 10px;
 }
 
-
-
 .tag{
     font-style: italic;
     font-size: 14px;
@@ -36,19 +34,38 @@
     margin-bottom: 5px;
 }
 
+.single-page-img img{
+    max-width: 100%;
+}
+
+nav{
+    background-color: rgba(157, 133, 246, 0.801);
+}
+
+
 nav ul{
     display: flex;
     gap: 40px;
     justify-content: center;
     list-style: none;
-    margin-top: 60px;
+    padding-top: 60px;
+    padding-bottom: 20px;
 }
 
-nav .active{
-    background-color: black;
+nav ul li .active{
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border: 2.5px solid rgba(43, 43, 82, 0.762); 
+    padding: 0.4rem 0.6rem;
+    color: black;
+}
+
+li .navlink{
+    text-decoration: none;
+    color: white;
+    background-color: rgba(43, 43, 82, 0.762);
     border-radius: 15px;
     padding: 0.4rem 0.6rem;
-    color: white;
 }
 
 .card-btns{

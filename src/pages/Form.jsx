@@ -1,9 +1,11 @@
 // /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"
 import axios from 'axios';
 
 function ListaPostConForm() {
 
+  const navigate = useNavigate()
   let protoPost = {
     title: "",
     image: "",
@@ -12,23 +14,14 @@ function ListaPostConForm() {
     // pubblicato: false
   }
 
-  let [listaPosts, setListaPosts] = useState([])
   let [listaTags, setListaTags] = useState([])
   let [post, setPost] = useState("")
   let apiUrl = "http://localhost:3333"
 
   useEffect(() => {
     console.log("partito")
-    getPosts();
     getTags();
   }, []);
-
-  const getPosts = () => {
-    axios.get(`${apiUrl}/posts`).then((resp) => {
-      setListaPosts(resp.data.blogPosts);
-      setPost(protoPost);
-    });
-  };
 
   const getTags = () => {
     axios.get(`${apiUrl}/posts`).then((resp) => {
@@ -48,9 +41,11 @@ function ListaPostConForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    axios.post(`${apiUrl}/posts`, post).then(() => {
-      getPosts();
-    })
+    axios.post(`${apiUrl}/posts`, post).then((resp) => { 
+      setPost(protoPost);
+      console.log(resp.data)     
+      navigate(`/Posts/${resp.data.id}`)
+    })    
   }
 
   const printTags = listaTags.map((curTag, i) => {

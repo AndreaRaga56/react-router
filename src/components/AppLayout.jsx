@@ -8,8 +8,8 @@ function AppLayout (){
         
         <Outlet/>
 
-        <footer>
-            Footer
+        <footer className="container mt-5">
+            [...Footer...]
         </footer>
         </>
     )
