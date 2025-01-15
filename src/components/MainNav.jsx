@@ -11,9 +11,14 @@ function MainNav(){
             title: "Chi Siamo"
         },
         {
-            path: "/Form+Posts",
+            path: "/Posts",
             title: "Lista degli articoli"
+        },
+        {
+            path: "/Form",
+            title: "Form"
         }
+
 
     ]
 
