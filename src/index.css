@@ -27,17 +27,13 @@
     padding: 10px;
 }
 
-.del{
-    position: absolute;
-    border-radius: 10px;
-    bottom: 5px;
-    right: 5px;
-}
+
 
 .tag{
     font-style: italic;
     font-size: 14px;
     width: 85%;
+    margin-bottom: 5px;
 }
 
 nav ul{
@@ -55,3 +51,9 @@ nav .active{
     color: white;
 }
 
+.card-btns{
+    margin-bottom: 15px;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}

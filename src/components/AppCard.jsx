@@ -1,13 +1,15 @@
 /* eslint-disable react/prop-types */
+import { useNavigate } from "react-router-dom"
 
 function AppCard({ cardPost, del }) {
     let apiUrl = "http://localhost:3333"
+    const navigate = useNavigate()
 
 
     let newArray = []
-    if (cardPost.tags != false){
+    if (cardPost.tags != false) {
         newArray = cardPost.tags.map((curTag, i) => {
-                return <span key={i} >#{curTag} </span>
+            return <span key={i} >#{curTag} </span>
         })
     }
 
@@ -21,7 +23,10 @@ function AppCard({ cardPost, del }) {
                 <p>{cardPost.content}</p>
                 <p className="tag">{cardPost.tags && newArray}</p>
             </div>
-            <div><button onClick={del} className="btn btn-outline-danger del">🗑</button></div>
+            <div className="card-btns">
+                <button onClick={() => navigate(`/Posts/${cardPost.id}`)} className="btn btn-success">Dettagli post</button>
+                <button onClick={del} className="btn btn-outline-danger del">🗑</button>
+            </div>
         </div>
     )
 }

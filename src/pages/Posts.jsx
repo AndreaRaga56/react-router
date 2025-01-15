@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import AppCard from "../components/AppCard"
 
-function ListaPostConForm() {
+function Posts() {
 
   let protoPost = {
     title: "",
@@ -103,4 +103,4 @@ function ListaPostConForm() {
   )
 }
 
-export default ListaPostConForm
+export default Posts
